@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <title>Kitap & Film Projesi</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 20px">
+      <div class="card row">
+        <div class="card-header" style="text-align: center; font-size: x-large">
+          Kitap & Film Projesi
+        </div>
+        <div class="card-body" id="show-alert">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Kitap Ekle
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <form id="book-form" name="form">
+                    <div class="form-row">
+                      <div class="form-group col-md-6 m-2">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="title"
+                          id="book-name"
+                          placeholder="Kitap İsmi"
+                        />
+                      </div>
+                      <div class="form-group col-md-6 m-2">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="director"
+                          id="writer"
+                          placeholder="Yazar"
+                        />
+                      </div>
+                      <div class="form-group col-md-6 m-2">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="url"
+                          id="book-url"
+                          placeholder="Kitap Afiş Linki"
+                        />
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-success m-2">
+                      Kitap Ekleyin
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Film Ekle
+                </button>
+              </h2>
+              <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+                rel="stylesheet"
+                integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+                crossorigin="anonymous"
+              />
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="card-body">
+                    <form id="film-form" name="form">
+                      <div class="form-row">
+                        <div class="form-group col-md-6 m-2">
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="title"
+                            id="title"
+                            placeholder="Film İsmi"
+                          />
+                        </div>
+                        <div class="form-group col-md-6 m-2">
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="director"
+                            id="director"
+                            placeholder="Yönetmen"
+                          />
+                        </div>
+                        <div class="form-group col-md-6 m-2">
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="url"
+                            id="film-url"
+                            placeholder="Film Afiş Linki"
+                          />
+                        </div>
+                        <!-- <div class="form-group col-md-4 m-2">
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="date"
+                            id="film-date"
+                            placeholder="Tarih"
+                          />
+                        </div> -->
+                      </div>
+                      <button type="submit" class="btn btn-success m-2">
+                        Film Ekleyin
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6" id="delete-book">
+              <div class="card-header m-2 text-center fw-bold">
+                Okunan Kitap Listesi
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="col-3 text-center">Resim</th>
+                    <th scope="col" class="col-4 text-center">Kitap</th>
+                    <th scope="col" class="col-4 text-center">Yazar</th>
+                    <!-- <th scope="col" class="col-3 text-center">Tarih</th> -->
+                  </tr>
+                </thead>
+                <tbody id="books">
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                    <td class="text-center"><img src="./mih_200.jpeg" class="img-fluid img-thumbnail" style="height: 100px;"></td>
+                    <td class="text-center">Siddhartha</td>
+                    <td class="text-center">Hermann Hess</td>
+                    <td class="text-center">01.03.2022</td>
+                  </tr> -->
+                </tbody>
+              </table>
+              <div class="d-grid gap-2">
+                <a id="clear-books" class="btn btn-warning" href="#"
+                  >Tüm Kitapları Temizleyin</a
+                >
+              </div>
+            </div>
+            <div class="col-6" id="delete-film">
+              <div class="card-header m-2 text-center fw-bold">
+                İzlenen Film Listesi
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="col-3 text-center">Resim</th>
+                    <th scope="col" class="col-4 text-center">Film</th>
+                    <th scope="col" class="col-4 text-center">Yönetmen</th>
+                    <!-- <th scope="col" class="col-3 text-center">Tarih</th> -->
+                  </tr>
+                </thead>
+                <tbody id="films">
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                    <td class="text-center"><img src="./hunt.jpeg" class="img-fluid img-thumbnail" style="height: 100px;"</td>
+                    <td class="text-center">The Hunt</td>
+                    <td class="text-center">Thomas Vinterberg</td>
+                    <td class="text-center">01.01.2022</td>
+                  </tr> -->
+                </tbody>
+              </table>
+              <div class="d-grid gap-2">
+                <a id="clear-films" class="btn btn-warning" href="#"
+                  >Tüm Filmleri Temizleyin</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="ui.js"></script>
+    <script src="storage.js"></script>
+    <script src="film.js"></script>
+    <script src="book.js"></script>
+    <script src="project.js"></script>
+  </body>
+</html>
